@@ -11,7 +11,7 @@ public class EntryPoint
         //Console.WriteLine(theBadGuy.Height);
         //Console.WriteLine(theGoodGuy.Height);
 
-        
+
 
         Console.WriteLine(theGoodGuy.Age);
         Console.WriteLine(theBadGuy.Age);
@@ -27,9 +27,10 @@ public class EntryPoint
             Console.WriteLine(ex.Message);
         }
 
-        //theGoodGuy.Greetings(theBadGuy);
+        theGoodGuy.Greetings("Tod");
         //theBadGuy.Greetings(theGoodGuy);
 
-        Console.ReadKey()
+        Console.ReadKey();
     }
+    
 }

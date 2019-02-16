@@ -61,9 +61,9 @@ namespace Characters.Warriors
             this.Name = name;
         }
 
-        public void Greetings(Warrior warrior)
+        public void Greetings(string name)
         {
-            Console.WriteLine($"Greetings {warrior.Name}!");
+            Console.WriteLine($@"{this.name} greets {name}!");
         }
     }
 }
