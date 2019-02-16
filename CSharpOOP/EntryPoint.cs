@@ -13,22 +13,24 @@ public class EntryPoint
 
 
 
-        Console.WriteLine(theGoodGuy.Age);
-        Console.WriteLine(theBadGuy.Age);
+        //Console.WriteLine(theGoodGuy.Age);
+        //Console.WriteLine(theBadGuy.Age);
 
-        try
-        {
-            theGoodGuy.Age = 25;
-            theBadGuy.Age = 15;
-        }
-        catch (ArgumentOutOfRangeException ex)
-        {
+        //try
+        //{
+        //    theGoodGuy.Age = 25;
+        //    theBadGuy.Age = 15;
+        //}
+        //catch (ArgumentOutOfRangeException ex)
+        //{
 
-            Console.WriteLine(ex.Message);
-        }
+        //    Console.WriteLine(ex.Message);
+        //}
 
-        theGoodGuy.Greetings("Tod");
+        //theGoodGuy.Greetings("Tod");
         //theBadGuy.Greetings(theGoodGuy);
+
+        Console.WriteLine(theGoodGuy.SwordWeapon.Damage);
 
         Console.ReadKey();
     }
