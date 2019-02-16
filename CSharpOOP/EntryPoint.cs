@@ -30,6 +30,6 @@ public class EntryPoint
         //theGoodGuy.Greetings(theBadGuy);
         //theBadGuy.Greetings(theGoodGuy);
 
-        Console.ReadKey();
+        Console.ReadKey()
     }
 }
