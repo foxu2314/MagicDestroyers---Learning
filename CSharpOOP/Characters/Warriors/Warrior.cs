@@ -3,7 +3,7 @@ using Weapons;
 
 namespace Characters.Warriors
 {
-    public class Warrior:Sword  //dziedziczenie po klasie, w tym przypadku tak musisz zrobic, do poczytania dlaczego ;p
+    public class Warrior
     {
         private int height;
         private int weight;
@@ -11,7 +11,6 @@ namespace Characters.Warriors
         private string name;
         private Sword swordWeapon;
 
-        
         public int Height
         {
             get
@@ -69,20 +68,14 @@ namespace Characters.Warriors
         }
    
 
-        
 
-        public Warrior(int height, int weight, string name, int damageNEW=0, Sword nowyMiecz = null)//2 ostatnie argumenty opcjonalne
+
+        public Warrior(int height, int weight, string name)
         {
             this.Height = height;
             this.Weight = weight;
             this.Name = name;
-            if(damageNEW != 0) //jak nie podasz sily bojowej przy tworzeniu woojownika to bedzie deafultowo 69 
-                //tak jak ustawlismy w klasie Sword
-                this.damagaeNew = damageNEW; //tu mozesz skorzystac z tego pola mimo ze nie jest w proporties w klasie Sword
-            if (nowyMiecz == null)
-                this.SwordWeapon = new Sword();
-            else
-                this.SwordWeapon = nowyMiecz;
+            this.SwordWeapon = new Sword();
         }
 
 
@@ -90,28 +83,5 @@ namespace Characters.Warriors
         {
             Console.WriteLine($@"{this.name} greets {name}!");
         }
-
-        public void WhoAmI()
-        {
-            Console.WriteLine($@"Wojownik: {this.name} o wzroście {this.height} i wadze {Weight}");
-            Console.WriteLine("\n");
-            Console.ReadKey();
-        }
-
-        public void HowMuchDemageCanICause()
-        {
-            Console.WriteLine($@"Jego siła bojowa to : {this.damagaeNew} (mimo ze tego pola nie ma w properties)");
-            Console.WriteLine("\n");
-            Console.ReadKey();
-        }
-
-        public void AbilityOfMySwordToKillDragons()
-        {
-            Console.WriteLine($@"Parametry mojego miecza(bez skojarzen xd) : {this.swordWeapon.Damage}");
-            Console.WriteLine("\n");
-            Console.ReadKey();
-        }
-
-
     }
 }
