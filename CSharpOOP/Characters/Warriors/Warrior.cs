@@ -5,11 +5,17 @@ namespace Characters.Warriors
 {
     public class Warrior
     {
+        #region Fields
+
         private int height;
         private int weight;
         private int age;
         private string name;
         private Sword swordWeapon;
+        
+        #endregion
+
+        #region Properties
 
         public int Height
         {
@@ -22,7 +28,6 @@ namespace Characters.Warriors
                 height = value;
             }
         }
-
         public int Age
         {
             get
@@ -43,7 +48,6 @@ namespace Characters.Warriors
             }
         }
         public int Weight { get; set; }
-
         public string Name
         {
             get
@@ -66,18 +70,42 @@ namespace Characters.Warriors
                 this.swordWeapon = value;
             }
         }
-   
+        #endregion
 
+        #region Constructors
 
+        public Warrior()
+            : this (170, 70)
+        {
 
+        }
+        public Warrior(int height, int weight)
+            : this(height, weight, "Young Warrior")
+        {
+
+        }
         public Warrior(int height, int weight, string name)
         {
             this.Height = height;
             this.Weight = weight;
             this.Name = name;
+            this.Age = 18;
             this.SwordWeapon = new Sword();
         }
 
+        public Warrior(int height, int age, int weight, string name, Sword swordWeapon)
+        {
+            Height = height;
+            Age = age;
+            Weight = weight;
+            Name = name;
+            SwordWeapon = swordWeapon;
+        }
+
+
+
+
+        #endregion
 
         public void Greetings(string name)
         {
