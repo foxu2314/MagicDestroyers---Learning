@@ -1,5 +1,6 @@
 ﻿using Characters.Warriors;
 using CSharpOOP;
+using Enumarations;
 using System;
 
 public class EntryPoint
@@ -12,7 +13,10 @@ public class EntryPoint
         Warrior secondWarrior = new Warrior(200, 20);
         
 
-        Warrior thirdWarrior = new Warrior(300, 30, "I am the third Warrio!");
+        Warrior thirdWarrior = new Warrior(300, 30);
+
+        Warrior fourthWarrior = new Warrior(400, 40, "SomeName", Faction.BadGuy);
+        Console.WriteLine(fourthWarrior.HealthPoints);
 
         //Console.WriteLine(firstWarrior.ID);
         //Console.WriteLine(secondWarrior.ID);
