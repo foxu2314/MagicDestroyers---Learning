@@ -7,6 +7,7 @@ namespace Characters.Warriors
     {
         #region Fields
 
+        public static int idCounter;
         private int height;
         private int weight;
         private int age;
@@ -91,6 +92,7 @@ namespace Characters.Warriors
             this.Name = name;
             this.Age = 18;
             this.SwordWeapon = new Sword();
+            Warrior.idCounter++;
         }
 
         public Warrior(int height, int age, int weight, string name, Sword swordWeapon)
