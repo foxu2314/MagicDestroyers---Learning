@@ -7,16 +7,44 @@ namespace Characters.Warriors
     {
         #region Fields
 
-        public static int idCounter;
+        private const int DEFAULT_HEIGHT = 170;
+        private const int DEFAULT_WEIGHT = 70;
+        private const int DEFAULT_AGE = 18;
+        private const string DEFAULT_NAME = "Young Warrior";
+
+        private readonly Sword DEFAULT_SWORD_WEAPON = new Sword();
+
+        private static int idCounter;
+        private readonly int id;
         private int height;
         private int weight;
         private int age;
         private string name;
         private Sword swordWeapon;
-        
+
         #endregion
 
         #region Properties
+
+        public static int IdCounter
+        {
+            get
+            {
+                return idCounter;
+            }
+            private set
+            {
+                idCounter = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+           
+        }
 
         public int Height
         {
@@ -76,23 +104,24 @@ namespace Characters.Warriors
         #region Constructors
 
         public Warrior()
-            : this (170, 70)
+            : this (DEFAULT_HEIGHT, DEFAULT_WEIGHT)
         {
 
         }
         public Warrior(int height, int weight)
-            : this(height, weight, "Young Warrior")
+            : this(height, weight, DEFAULT_NAME)
         {
 
         }
         public Warrior(int height, int weight, string name)
         {
+            idCounter++;
+            this.id = IdCounter;
             this.Height = height;
             this.Weight = weight;
             this.Name = name;
-            this.Age = 18;
-            this.SwordWeapon = new Sword();
-            Warrior.idCounter++;
+            this.Age = DEFAULT_AGE;
+            this.SwordWeapon = DEFAULT_SWORD_WEAPON;
         }
 
         public Warrior(int height, int age, int weight, string name, Sword swordWeapon)
@@ -113,5 +142,17 @@ namespace Characters.Warriors
         {
             Console.WriteLine($@"{this.name} greets {name}!");
         }
+
+        public static void GetDefaultValues(Warrior warrior)
+        {
+            Console.WriteLine($"The default height: {DEFAULT_HEIGHT}" +
+                $"\nThe default weight: {DEFAULT_WEIGHT}" +
+                $"\nThe default age: {DEFAULT_AGE}" +
+                $"\nThe default name: {DEFAULT_NAME}" +
+                $"\nThe default Weapon Damage: {warrior.DEFAULT_SWORD_WEAPON.Damage}");
+
+
+        }
+    
     }
 }
