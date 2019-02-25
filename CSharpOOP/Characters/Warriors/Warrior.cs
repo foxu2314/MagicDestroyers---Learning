@@ -1,10 +1,11 @@
-﻿using Enumarations;
+﻿using CSharpOOP.Characters;
+using Enumarations;
 using System;
 using Weapons;
 
 namespace Characters.Warriors
 {
-    public class Warrior
+    public class Warrior : Character
     {
         #region Fields
 
@@ -18,9 +19,6 @@ namespace Characters.Warriors
         private static int idCounter;
         private readonly int id;
         private int height;
-        private int weight;
-        private int age;
-        private int healthPoints;
         private Faction faction;
         private string name;
         private Sword swordWeapon;
@@ -58,37 +56,6 @@ namespace Characters.Warriors
             set
             {
                 height = value;
-            }
-        }
-        public int Age
-        {
-            get
-            {
-                return age;
-            }
-            set
-            {
-                if (value>=18 && value<=45)
-                {
-                    age = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, $@"The selected age for {name} is not a proper for a warrior. The age must be between 18 and 45");
-                }
-                
-            }
-        }
-        public int Weight { get; set; }
-        public int HealthPoints
-        {
-            get
-            {
-                return this.healthPoints;
-            }
-            set
-            {
-                this.healthPoints = value;
             }
         }
         public Faction Faction
@@ -143,31 +110,37 @@ namespace Characters.Warriors
             idCounter++;
             this.id = IdCounter;
             this.Height = height;
-            this.Weight = weight;
+            base.Weight = weight;
             this.Name = name;
             this.Faction = faction;
-            this.Age = DEFAULT_AGE;
+            base.Age = DEFAULT_AGE;
             this.SwordWeapon = DEFAULT_SWORD_WEAPON;
 
             if (this.Faction == Faction.GoodGuy)
             {
-                this.HealthPoints = 120;
+                base.HealthPoints = 120;
             }
             else if (this.Faction == Faction.BadGuy)
             {
-                this.HealthPoints = 100;
+                base.HealthPoints = 100;
             }
 
         }
 
-        public Warrior(int height, int age, int weight, string name, Sword swordWeapon)
+        public Warrior(int healthPoints, int weight, int age, int height)
+            : base (healthPoints, weight, age)
         {
-            Height = height;
-            Age = age;
-            Weight = weight;
-            Name = name;
-            SwordWeapon = swordWeapon;
+            this.Height = height;
         }
+
+        //public Warrior(int height, int age, int weight, string name, Sword swordWeapon)
+        //{
+        //    Height = height;
+        //    Age = age;
+        //    Weight = weight;
+        //    Name = name;
+        //    SwordWeapon = swordWeapon;
+        //}
 
 
 
@@ -189,6 +162,11 @@ namespace Characters.Warriors
 
 
         }
-    
+
+        public override void Move(int pauseBetweenMovements)
+        {
+            base.Move(pauseBetweenMovements);
+            Console.WriteLine("I just moved 10 times, I am a Warrior");
+        }
     }
 }

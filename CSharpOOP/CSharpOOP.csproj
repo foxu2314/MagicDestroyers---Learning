@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Spellcasters\Mage.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Enumarations\Factions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
