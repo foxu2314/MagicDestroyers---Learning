@@ -1,11 +1,12 @@
 ﻿using CSharpOOP.Characters;
 using Enumarations;
+using Interfaces;
 using System;
 using Weapons;
 
 namespace Characters.Warriors
 {
-    public class Warrior : Character
+    public class Warrior : Character, ICalculator
     {
         #region Fields
 
@@ -167,6 +168,11 @@ namespace Characters.Warriors
         {
             base.Move(pauseBetweenMovements);
             Console.WriteLine("I just moved 10 times, I am a Warrior");
+        }
+
+        public void Addition(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine(firstNumber + secondNumber);
         }
     }
 }

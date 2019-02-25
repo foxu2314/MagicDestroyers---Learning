@@ -48,6 +48,7 @@
     <Compile Include="Characters\Spellcasters\Mage.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Enumarations\Factions.cs" />
+    <Compile Include="Interfaces\ICalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Characters\Warriors\Warrior.cs" />
     <Compile Include="Tools.cs" />

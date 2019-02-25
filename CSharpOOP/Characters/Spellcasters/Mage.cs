@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Characters.Spellcasters
 {
-    class Mage : Character
+    class Mage : Character, ICalculator
     {
         public override int Age
         {
@@ -27,5 +28,11 @@ namespace CSharpOOP.Characters.Spellcasters
             }
         }
 
+        public void Addition(int firstNumber, int secondNumber)
+        {
+            int sum = firstNumber + secondNumber;
+            int modifiedSum = sum + 123;
+            Console.WriteLine(modifiedSum-123);
+        }
     }
 }
