@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Characters
 {
-    public class Character
+    public class Character : ICalculator
     {
         private int healthPoints;
         private int weight;
@@ -77,5 +78,8 @@ namespace CSharpOOP.Characters
                 Thread.Sleep(pauseBetweenMovements);
             }
         }
+
+        public abstract int Addition(int firstNumber, int secondNumber);
+
     }
 }
