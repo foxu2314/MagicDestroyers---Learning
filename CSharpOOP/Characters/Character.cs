@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Characters
 {
-    public class Character : ICalculator
+    public abstract class Character : ICalculator
     {
         private int healthPoints;
         private int weight;
@@ -79,7 +79,11 @@ namespace CSharpOOP.Characters
             }
         }
 
-        public abstract int Addition(int firstNumber, int secondNumber);
+        //public abstract int Addition(int firstNumber, int secondNumber);
 
+        public virtual void Addition(int firstNumber, int secondNumber)
+        {
+            Console.WriteLine(firstNumber + secondNumber);
+        }
     }
 }

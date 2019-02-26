@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Characters.Spellcasters
 {
-    class Mage : Character, ICalculator, ISpellcaster
+    public class Mage : Character, ICalculator, ISpellcaster
     {
         private int mana;
 
@@ -59,8 +59,6 @@ namespace CSharpOOP.Characters.Spellcasters
             }
         }
 
-        public abstract int Addition(int firstNumber, int secondNumber);
-
         public Mage()
         {
             this.Mana = 100;
@@ -76,6 +74,11 @@ namespace CSharpOOP.Characters.Spellcasters
         {
             warrior.HealthPoints = warrior.HealthPoints - this.mySpell.Damage;
             this.mana = this.mana - this.mySpell.ManaCost;
+        }
+
+        public override void Addition(int firstNumber, int secondNumber)
+        {
+            throw new NotImplementedException();
         }
     }
 }
