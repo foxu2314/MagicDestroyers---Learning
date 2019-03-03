@@ -8,13 +8,25 @@ using System.Threading.Tasks;
 
 namespace CSharpOOP.Characters
 {
-    public abstract class Character : ICalculator
+    public abstract class Character
     {
-        private int healthPoints;
-        private int weight;
+        private string name;
+        protected int healthPoints;
+        protected int weight;
 
         protected int age;
 
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                this.name = value;
+            }
+        }
         public int HealthPoints
         {
             get
@@ -26,7 +38,6 @@ namespace CSharpOOP.Characters
                 this.healthPoints = value;
             }
         }
-
         public int Weight
         {
             get
@@ -38,7 +49,6 @@ namespace CSharpOOP.Characters
                 this.weight = value;
             }
         }
-
         public virtual int Age
         {
             get
@@ -62,12 +72,16 @@ namespace CSharpOOP.Characters
         {
 
         }
-
         public Character(int healthPoints, int weight, int age)
         {
             this.HealthPoints = healthPoints;
             this.Weight = weight;
             this.Age = age;
+        }
+
+        public void Greetings(string name)
+        {
+            Console.WriteLine($@"{this.Name}greets {name}");
         }
 
         public virtual void Move(int pauseBetweenMovements)
@@ -81,9 +95,9 @@ namespace CSharpOOP.Characters
 
         //public abstract int Addition(int firstNumber, int secondNumber);
 
-        public virtual void Addition(int firstNumber, int secondNumber)
+        public virtual int Addition(int firstNumber, int secondNumber)
         {
-            Console.WriteLine(firstNumber + secondNumber);
+            return firstNumber + secondNumber;
         }
     }
 }

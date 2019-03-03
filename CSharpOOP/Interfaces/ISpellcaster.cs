@@ -1,4 +1,5 @@
 ﻿using Characters.Warriors;
+using CSharpOOP.Characters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace CSharpOOP.Interfaces
     {
         int Mana { get; set; }
 
-        void CastSpell(Warrior warrior);
+        void CastSpell(Character character);
     }
 }
